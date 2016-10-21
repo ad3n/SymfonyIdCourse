@@ -3,7 +3,6 @@
 namespace AppBundle\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
-use Symfony\Component\Validator\Constraints as Assert;
 
 /**
  * @ORM\Entity()
@@ -22,8 +21,6 @@ class Group
 
     /**
      * @ORM\Column(name="code", type="string", length=3)
-     *
-     * @Assert\Length(min=2, minMessage="Kurang panjang coy", max=3, maxMessage="Kepanjangan anunya")
      *
      * @var string
      */
@@ -44,21 +41,21 @@ class Group
         return $this->id;
     }
 
-    /**
-     * @return string
-     */
-    public function getCode()
-    {
-        return $this->code;
-    }
-
-    /**
-     * @param string $code
-     */
-    public function setCode($code)
-    {
-        $this->code = $code;
-    }
+//    /**
+//     * @return string
+//     */
+//    public function getCode()
+//    {
+//        return $this->code;
+//    }
+//
+//    /**
+//     * @param string $code
+//     */
+//    public function setCode($code)
+//    {
+//        $this->code = $code;
+//    }
 
     /**
      * @return string
