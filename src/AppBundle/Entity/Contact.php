@@ -57,14 +57,6 @@ class Contact
     }
 
     /**
-     * @param int $id
-     */
-    public function setId($id)
-    {
-        $this->id = $id;
-    }
-
-    /**
      * @return Group
      */
     public function getGroup()
