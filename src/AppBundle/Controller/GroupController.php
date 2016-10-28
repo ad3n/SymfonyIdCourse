@@ -8,6 +8,7 @@ use Sensio\Bundle\FrameworkExtraBundle\Configuration\Method;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
 use AppBundle\Entity\Group;
 use AppBundle\Form\GroupType;
+use Symfony\Component\VarDumper\VarDumper;
 
 /**
  * Group controller.
@@ -66,8 +67,11 @@ class GroupController extends Controller
      * @Route("/{id}", name="group_show")
      * @Method("GET")
      */
-    public function showAction(Group $group)
+    public function showAction($id)
     {
+        $entityManager = $this->get('doctrine.orm.entity_manager');
+        $group = $entityManager->getRepository('AppBundle:Group')->find($id);
+
         $deleteForm = $this->createDeleteForm($group);
 
         return $this->render('group/show.html.twig', array(
