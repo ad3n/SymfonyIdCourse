@@ -23,7 +23,7 @@ class GenerateUsernameCommand extends ContainerAwareCommand
         $entityManager = $this->getContainer()->get('doctrine.orm.entity_manager');
         $generator = $this->getContainer()->get('unique_username_generator');
 
-        $fullName = 'Komang Adi Supriatna';
+        $fullName = 'Hayati Was wisu';
         $birthday = new \DateTime();
         for ($i = 0; $i <= 9; $i++) {
             $username = $generator->generate($fullName, $birthday);

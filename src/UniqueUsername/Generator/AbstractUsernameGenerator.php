@@ -29,7 +29,7 @@ class AbstractUsernameGenerator
 
     protected function doGenerate($fullName, \DateTime $dateTime)
     {
-        $fullName = substr($fullName, -8);
+        $fullName = substr(preg_replace('/[^A-Z0-9]/', '', strtoupper($fullName)), -8);
 
         /**
          * DD MM.

@@ -15,7 +15,7 @@ class GenericUsernameGenerator extends AbstractUsernameGenerator implements User
      */
     public function generate($fullName, \DateTime $dateTime)
     {
-        $fullName = substr($fullName, -8);
+        $fullName = substr($fullName, 0, 8);
 
         return $this->doGenerate($fullName, $dateTime);
     }
