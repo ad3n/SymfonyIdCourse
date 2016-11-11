@@ -38,7 +38,7 @@ class ShortFullNameGenerator extends AbstractUsernameGenerator implements Userna
      */
     private function firstForm($fullName, \DateTime $dateTime)
     {
-        $fullName = substr(str_repeat($fullName, 8), -8);
+        $fullName = substr(str_repeat($fullName, 8), 0, 8);
 
         return $this->doGenerate($fullName, $dateTime);
     }
@@ -57,7 +57,7 @@ class ShortFullNameGenerator extends AbstractUsernameGenerator implements Userna
 
         $username = $this->doGenerate($fullName, $dateTime);
         if ('' === $username) {
-            $fullName = substr(sprintf('%s00000000', $fullName), -8);
+            $fullName = substr(sprintf('%s00000000', $fullName), 0, 8);
 
             $username = $this->doGenerate($fullName, $dateTime);
         }
