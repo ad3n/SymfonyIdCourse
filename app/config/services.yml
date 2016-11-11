@@ -4,6 +4,12 @@ parameters:
 #    parameter_name: value
 
 services:
-#    service_name:
-#        class: AppBundle\Directory\ClassName
-#        arguments: ["@another_service_name", "plain_value", "%parameter_name%"]
+    username_repository:
+        class: UniqueUsername\DoctrineUsernameRepository
+        arguments:
+            - '@doctrine.orm.entity_manager'
+
+    unique_username_generator:
+        class: UniqueUsername\UsernameGeneratorFactory
+        arguments:
+            - '@username_repository'

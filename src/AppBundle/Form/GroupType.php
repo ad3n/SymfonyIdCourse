@@ -12,7 +12,7 @@ class GroupType extends AbstractType
 {
     /**
      * @param FormBuilderInterface $builder
-     * @param array $options
+     * @param array                $options
      */
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
@@ -21,7 +21,7 @@ class GroupType extends AbstractType
             ->add('name', TextType::class)
         ;
     }
-    
+
     /**
      * @param OptionsResolver $resolver
      */

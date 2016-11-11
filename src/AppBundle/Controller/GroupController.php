@@ -7,8 +7,6 @@ use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Method;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
 use AppBundle\Entity\Group;
-use AppBundle\Form\GroupType;
-use Symfony\Component\VarDumper\VarDumper;
 
 /**
  * Group controller.

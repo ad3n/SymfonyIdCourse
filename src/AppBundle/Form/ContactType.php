@@ -23,20 +23,20 @@ class ContactType extends AbstractType
                 'class' => Group::class,
                 'placeholder' => 'Pilih',
                 'choice_label' => function ($group) {
-                    /** @var Group $group */
+                    /* @var Group $group */
                     return sprintf('%s | %s', $group->getCode(), $group->getName());
                 },
             ))
         ;
     }
-    
+
     /**
      * {@inheritdoc}
      */
     public function configureOptions(OptionsResolver $resolver)
     {
         $resolver->setDefaults(array(
-            'data_class' => 'AppBundle\Entity\Contact'
+            'data_class' => 'AppBundle\Entity\Contact',
         ));
     }
 
@@ -47,6 +47,4 @@ class ContactType extends AbstractType
     {
         return 'appbundle_contact';
     }
-
-
 }
