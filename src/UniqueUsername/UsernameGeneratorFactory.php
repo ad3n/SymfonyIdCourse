@@ -56,7 +56,7 @@ class UsernameGeneratorFactory
     public function generate($fullName, \DateTime $dateTime)
     {
         if (8 > strlen($fullName)) {
-            /** @var UsernameGeneratorInterface $generator */
+            /** @var ShortFullNameGenerator $generator */
             $generator = $this->generators[ShortFullNameGenerator::class];
 
             VarDumper::dump('Short');
@@ -79,7 +79,7 @@ class UsernameGeneratorFactory
 
             VarDumper::dump('Islam');
 
-            return $generator->generate($fullName, $dateTime);
+            return $this->makeSure($generator->generate($fullName, $dateTime), $dateTime);
         }
 
         /** @var WesternUsernameGenerator $generator */
@@ -96,5 +96,15 @@ class UsernameGeneratorFactory
         $generator = $this->generators[GenericUsernameGenerator::class];
 
         return $generator->generate($fullName, $dateTime);
+    }
+
+    private function makeSure($username, \DateTime $dateTime)
+    {
+        /** @var ShortFullNameGenerator $generator */
+        $generator = $this->generators[ShortFullNameGenerator::class];
+
+        VarDumper::dump('Short');
+
+        return $generator->generate($username, $dateTime);
     }
 }

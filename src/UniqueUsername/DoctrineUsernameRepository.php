@@ -1,6 +1,7 @@
 <?php
 
 namespace UniqueUsername;
+
 use Doctrine\ORM\EntityManager;
 
 /**
