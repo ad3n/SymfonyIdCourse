@@ -4,6 +4,16 @@ parameters:
 #    parameter_name: value
 
 services:
+    test_util:
+        class: AppBundle\Util\TestUtil
+
+    test2_util:
+        class: AppBundle\Util\Test2Util
+        arguments:
+            - '@test_util'
+        calls:
+            - ['panggilAku', []]
+
     username_repository:
         class: UniqueUsername\DoctrineUsernameRepository
         arguments:
